@@ -16,11 +16,6 @@
         <v-main>
           <v-container>
             <!-- <v-row align="center" justify="center">
-              <v-col cols="6" align-self="center">
-                <h1 class="text-center">Germany Swan BTS !!</h1>
-              </v-col>
-            </v-row> -->
-            <!-- <v-row align="center" justify="center">
               <v-col cols="12" align-self="center">
                 <div class="d-flex justify-center">
                   <a download="ticket_apk" href="./assets/app-release.apk" title="apk">
@@ -44,14 +39,21 @@
                 </div>
               </v-col>
             </v-row>
+            <!--vbtn api: @click="callapi"-->
             <v-row align="center" justify="center">
-              <v-btn href="https://buy.stripe.com/test_bIY28A98F42AaxWbII">
+              <v-btn color="primary" width="200px" href="./page/swan-ticket.html">
                 購買天鵝堡門票
               </v-btn>
             </v-row>
             <v-row align="center" justify="center" class="mt-8">
-              <v-btn @click="callapi">
+            
+              <v-btn color="primary" width="200px" href="./page/train-ticket.html">
                 購買車票
+              </v-btn>
+            </v-row>
+            <v-row align="center" justify="center" class="mt-8">
+              <v-btn color="primary" width="200px" href="./page/combine-ticket.html">
+                購買組合套票
               </v-btn>
             </v-row>
           </v-container>
@@ -68,6 +70,7 @@
         vuetify: new Vuetify(),
 
         methods: {
+          // ajax get api
           callapi() {
             console.log('HI');
             $.ajax({

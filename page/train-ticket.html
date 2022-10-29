@@ -1,0 +1,58 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Germany BTS</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  </head>
+
+  <body>
+    <div id="app">
+      <v-app>
+        <v-main>
+          <v-container>
+            <v-row align="center" justify="center">
+              <h1 class="pt-8">立刻購買火車票前往天鵝堡</h1>
+            </v-row>
+            <v-row align="center" justify="center">
+              <v-col cols="12" align-self="center">
+                <div class="d-flex justify-center">
+                  <a download="ticket_apk" href="./assets/app-release.apk" title="apk">
+                    <img
+                      style="width: 100%; contain: content;"
+                      src="https://www.settour.com.tw/ss_img/info/location/HDB/B0/HDB0000015/HDB0000015_77106.jpg"
+                    ></img>
+                  </a>
+                </div>
+              </v-col>
+            </v-row>
+            <v-row align="center" justify="center" class="mt-8">
+              <v-btn href="https://buy.stripe.com/test_bIY28A98F42AaxWbII">
+                購買車票
+              </v-btn>
+            </v-row>
+          </v-container>
+        </v-main>
+      </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        vuetify: new Vuetify(),
+
+        methods: {
+
+        }
+      })
+    </script>
+  </body>
+</html>
