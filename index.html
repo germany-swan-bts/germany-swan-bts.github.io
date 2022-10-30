@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <title>Germany BTS</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <link rel="stylesheet" href="./style.css" />
   </head>
 
@@ -32,14 +32,40 @@
                 <div class="d-flex justify-center">
                   <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOIyqUFjodyqBbVSP13ee_h337JR3Xw8gZhrdFWRfk8K_kmQ/viewform">
                     <img
-                      style="width: 100%; height: calc(100vh - 24px); object-fit: contain;"
+                      style="width: 100%; height: calc(40vh - 24px); object-fit: contain;"
                       src="/assets/APP_Lobby.png"
                     ></img>
                   </a>
                 </div>
               </v-col>
             </v-row>
-            <!--vbtn api: @click="callapi"-->
+            <v-row align="center" justify="center">
+              <form>
+                <v-text-field
+                  v-model="name"
+                  label="Name"
+                  required
+                ></v-text-field>
+
+                <v-text-field
+                  v-model="email"
+                  label="E-mail"
+                  required
+                ></v-text-field>
+
+                <v-text-field
+                  v-model="account"
+                  label="末五碼"
+                  required
+                ></v-text-field>
+            
+                <v-btn color="primary" width="200px" @click="submit">
+                  購買天鵝堡門票
+                </v-btn>
+              </form>
+              
+            </v-row>
+            
             <!-- <v-row align="center" justify="center">
               <v-btn color="primary" width="200px" href="./page/swan-ticket.html">
                 購買天鵝堡門票
@@ -69,21 +95,27 @@
         el: '#app',
         vuetify: new Vuetify(),
 
+        data() {
+          return { 
+            name: '',
+            email: '',
+            account: ''
+          }
+        },
+
         methods: {
-          // ajax get api
-          callapi() {
+          submit() {
             console.log('HI');
             $.ajax({
-              url: 'https://eason920.github.io/ajax/data/play.json',
+              url: "https://script.google.com/macros/s/AKfycbzF2NX9IqtVcClzMxrP-zISKiWIZk5IKxUx5y_ibEQQXKWC5yJYKrd8YGNCP-pcXS6y/exec",
+              data: {
+                  "name": this.name,
+                  "email": this.email,
+                  "account": this.account
+              },
+              dataType: "JSON",
               success: function (response) {
                 console.log('success');
-                $.each(response, function (index, ele) {
-                  $('.box').append(
-                    $('<li>', { text: '名稱:' + ele.place }),
-                    $('<li>', { text: '地址' + ele.address }),
-                    $('<hr>')
-                );
-              });
               },
               error: function (xhr) {
                 console.log('fail');
